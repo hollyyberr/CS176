@@ -17,7 +17,7 @@ public class Venue {
 		if(allSeats[sectionLookup-1][rowLookup-1][seatsLookup-1] == true) {
 			return false;
 		}
-		else {
+		else { 
 			if(allSeats[sectionLookup-1][rowLookup-1][seatsLookup-1] ==  false) {
 				allSeats[sectionLookup-1][rowLookup-1][seatsLookup-1] = true;
 			}
