@@ -13,26 +13,17 @@ public class VenueTester {
 		int count = 0;
 		Venue PrudentialCenter = new Venue(4,5,10);
 		
-
-
-		while(count!=100){
+		while(count!= SENTINEL){
 			section = rand.nextInt(4) + one;
 			row = rand.nextInt(5) + one;
 			seat = rand.nextInt(10) + one;
-			if(PrudentialCenter.seatLookup(section,row,seat) == false) {
-				System.out.println("Your seat has been awarded! Your seat location is: " + section + " " + row + " " + seat + ".");
+			if(PrudentialCenter.seatLookup(section,row,seat) == true) {
+				System.out.println("Your seat has been awarded! Your seat location is: Section; " + section + "; Row: " + row + "; Seat: " + seat + ".");
 			}
-			else if((PrudentialCenter.seatLookup(section,row,seat) == true)) {
+			else if((PrudentialCenter.seatLookup(section,row,seat) == false)) {
 				System.out.println("You did not win an awarded seat, better luck next time!");
 			}
 			count++;
-			
 		}
-
-		
-
-
 	}
-
-
 }
