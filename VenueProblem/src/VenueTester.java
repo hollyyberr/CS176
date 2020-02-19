@@ -19,11 +19,14 @@ public class VenueTester {
 			seat = rand.nextInt(10) + one;
 			if(PrudentialCenter.seatLookup(section,row,seat) == true) {
 				System.out.println("Your seat has been awarded! Your seat location is: Section; " + section + "; Row: " + row + "; Seat: " + seat + ".");
-			}
+				count++;
+				
+				}
 			else if((PrudentialCenter.seatLookup(section,row,seat) == false)) {
 				System.out.println("You did not win an awarded seat, better luck next time!");
 			}
-			count++;
+			
 		}
+		System.out.print("Awards: " + count);
 	}
 }
