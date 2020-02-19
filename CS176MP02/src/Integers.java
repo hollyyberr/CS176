@@ -9,7 +9,7 @@ public class Integers {
 	int min = 0;
 	final int SENTINEL = -999;
 	int [] integers;
-
+ 
 	public Integers() {
 		integers = new int[MAX_SIZE];
 	}
