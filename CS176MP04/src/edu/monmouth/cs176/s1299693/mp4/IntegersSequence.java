@@ -16,7 +16,7 @@ public class IntegersSequence {
 		values.add(number);
 	}
 	//Create and initialize toString method
-	public String toString(){
+	public String toString(){ 
 		return values.toString();
 		}
 	public IntegersSequence append(IntegersSequence other) {
