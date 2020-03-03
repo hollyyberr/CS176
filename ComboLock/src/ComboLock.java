@@ -1,23 +1,27 @@
 import java.util.Scanner;
 
 public class ComboLock {
+	//Declare and initialize local variables
 	boolean open = false;
 	private int current = 0;
+	private int correct;
+	private int correct2;
+	private int correct3;
 	private boolean zero = false;
 	private boolean one = false;
 	private boolean two = false;
 	private boolean three = false;
+	private int turn = 0;
 
-	private int secret; 
-	private int secret2; 
-	private int secret3; 
-
+	//Declare and initialize combo lock constructor
 	public ComboLock(int secret, int secret2, int secret3) {
 
-
+		correct = secret;
+		correct2 = secret2;
+		correct3 = secret3;
 	}
 	public void reset() {
-		zero = true;
+		turn = 0;
 		one = false;
 		two = false;
 		three = false;
@@ -25,41 +29,24 @@ public class ComboLock {
 	
 	//Checks to see if the second position is true and adjusts the tick marks
 	public void turnLeft(int ticks) {
-		if(two == true){
-			current = (current + ticks) % 40;
-		}
-		if(current == secret2){
+		turn = turn + 1;
+		current = ((current + ticks) + 40) % 40;
+		System.out.println("Current position is: " + current);
+		if(turn == 2 && current == correct2){
 			two = true;
-			zero = false;
-		}
-		else{
-			two = false; 
 		}
 	}
-
 	public void turnRight(int ticks) {
 		//Check if first position is true and adjusts the tick marks
-		if(one == true){
-			current = (current + ticks) % 40;
+		turn = turn + 1;
+		current = ((current - ticks) + 40) % 40;
+		System.out.println("Current position is: " + current);
+		if(turn == 1 && current == correct){
+			one = true;
 		}
-		if(current == secret){
-			one = true; 
-			zero = false;
-		}
-		else{
-			one = false; 
-		}
-
 		//Checks if third position is true and adjusts the tick marks
-		if(three == true){
-			current = (current + ticks) % 40;
-		}
-		if(current == secret3){
-			three = true; 
-			zero = false;
-		}
-		else{
-			three = false; 
+		if(turn == 3 && current == correct3){
+			three = true;
 		}
 	}
 	
@@ -67,13 +54,12 @@ public class ComboLock {
 	public boolean open() {
 		if(one == true && two == true && three == true) {
 			open = true;
-			System.out.print("The lock has been successfully opened, congratulations!");
-			return true;
+			System.out.println("The lock has been successfully opened, congratulations!");
 		}
 		else {
 			open = false;
-			return false;
 		}
+		return open;
 	}
 
 }

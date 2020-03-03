@@ -12,40 +12,39 @@ public class ComboLockDemo {
 		
 		//Create and initialize local variables
 		int zero = 0;
-		int turn = 0;
+		int ticks = 0;
 		int count = 0;
-		int thirtyNine = 39;
+		int forty = 40;
 		
+		//Call the reset method
 		Demo.reset();
-		
-		
 	
-		
-		
 		//Start loop for reading input
 		System.out.println("Enter a number of ticks to turn to the right or any invalid number to quit: ");
 		while(scan.hasNextInt()) {
-			turn = scan.nextInt();
-			Demo.turnRight(30);
-			if(turn > 0 && turn < thirtyNine) {
-				count++;
+			ticks = scan.nextInt();
+			Demo.turnRight(ticks);
+			count++;
+			if(ticks > 0 && ticks < forty) {
 				System.out.println("Enter a number of ticks to the left or any invalid number to quit: ");
-				turn = scan.nextInt();
-				Demo.turnLeft(10);
+				ticks = scan.nextInt();
+				Demo.turnLeft(ticks);
 				count++;
 				System.out.print("Enter a number of ticks to the right or any invalid number to quit: ");
-				turn = scan.nextInt();
-				Demo.turnRight(30);
+				ticks = scan.nextInt();
+				Demo.turnRight(ticks);
 				count++;
-				Demo.open();
 			}
 			if(count == 3) {
 				break;
 			}
-			else if(turn < zero || turn > thirtyNine) {
+			else if(ticks < zero || ticks > forty) {
 				break;
 			}
+		
 		}
+		
+		System.out.println(Demo.open());
 
 	}
 
