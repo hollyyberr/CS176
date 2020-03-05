@@ -5,9 +5,9 @@ public class ComboLock {
 	boolean open = false;
 	private int current = 0;
 	private int correct;
+	private int correct1;
 	private int correct2;
-	private int correct3;
-	private boolean zero = false;
+ 	private boolean zero = false;
 	private boolean one = false;
 	private boolean two = false;
 	private boolean three = false;
@@ -17,8 +17,8 @@ public class ComboLock {
 	public ComboLock(int secret, int secret2, int secret3) {
 
 		correct = secret;
-		correct2 = secret2;
-		correct3 = secret3;
+		correct1 = secret2;
+		correct2 = secret3;
 	}
 	public void reset() {
 		turn = 0;
@@ -32,7 +32,7 @@ public class ComboLock {
 		turn = turn + 1;
 		current = ((current + ticks) + 40) % 40;
 		System.out.println("Current position is: " + current);
-		if(turn == 2 && current == correct2){
+		if(turn == 2 && current == correct1){
 			two = true;
 		}
 	}
@@ -45,7 +45,7 @@ public class ComboLock {
 			one = true;
 		}
 		//Checks if third position is true and adjusts the tick marks
-		if(turn == 3 && current == correct3){
+		if(turn == 3 && current == correct2){
 			three = true;
 		}
 	}
