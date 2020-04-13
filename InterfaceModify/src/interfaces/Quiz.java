@@ -1,4 +1,4 @@
-
+package interfaces;
 public class Quiz implements Measurable {
 
 	private String name;

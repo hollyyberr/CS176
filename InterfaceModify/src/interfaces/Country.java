@@ -1,3 +1,5 @@
+package interfaces;
+
 public class Country implements Measurable
 {
    private String name;

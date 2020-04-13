@@ -1,7 +1,9 @@
+package interfaces;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+
 import java.util.Scanner;
 /**
    This program demonstrates how an action listener can be used to trigger 
