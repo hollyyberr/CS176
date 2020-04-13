@@ -7,7 +7,7 @@ package interfaces;
 public class BankAccount implements Measurable
 {
    private double balance;
-  
+   
    /**
       Constructs a bank account with a zero balance.
    */
